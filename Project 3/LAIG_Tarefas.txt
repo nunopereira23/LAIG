@@ -1,0 +1,54 @@
+Criação da cena de jogo (4.5 valores)
+-Tabuleiro
+-Aspeto geral
+-Jogabilidade, interação, criatividade
+
+Peças (4.5 valores)
+-Modelação
+-Movimento e animação por imagens chave.
+
+Visualização (3 valores)
+-Iluminação
+-Ambientes de jogo
+
+Funcionalidades genéricas do jogo (2.5 valores)
+X Nível de dificuldade
+X Tipo de jogo
+-Undo
+-Rotação da câmara entre pontos de vista pré-definidos
+
+Outras Funcionalidades (1.5 valores)
+-Marcador
+-Filme do jogo
+-Medição do tempo de jogo
+
+Software (4 valores)
+-Estrutura e parametrização
+-Interligação com Programação em Lógica
+
+
+DIAS:
+27:
+X Condições fim de jogo - Feito dia 27
+X Medição do tempo de jogo - Feito dia 27
+28:
+X Movimento e animação por imagens chave - Feito dia 28
+X Tabuleiro secundário - Feito dia 29
+X Undo peças apagadas - Feito dia 29
+29:
+X Filme do jogo - Feito dia 29
+X Rotação da câmara entre pontos de vista pré-definidos - Feito dia 29
+X Modelação - Feito dia 30
+30:
+X Marcador - Feito dia 29
+-Iluminação
+X Ambientes de jogo - Feito dia 31
+XX Troca entre cenas - Feito dia 30
+31:
+-FDS NÃO
+
+BUGS:
+- Peças não desaparecem internamente do secondary board quando voltam ao main board. Resulta em duplicação de peças no mesmo sítio, uma do main e outra do secondary animada para o main.
+
+TODO:
+- Material do board.
