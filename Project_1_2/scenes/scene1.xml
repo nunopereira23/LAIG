@@ -1,0 +1,1149 @@
+<SCENE>
+
+<!-- Initial values -->
+<INITIALS>
+    <frustum near="0.1" far="500"/>
+    <translation x="-1" y="1" z="0" />
+    <rotation axis="x" angle="0" />
+    <rotation axis="y" angle="0" />
+    <rotation axis="z" angle="0" />
+    <scale sx="0.25" sy="0.25" sz="0.25" />
+    <reference length="5" />
+</INITIALS>
+
+
+<!-- Illumination and clear colour -->
+<ILLUMINATION>
+    <ambient r="1" g="1" b="1" a="1" />
+    <background r="0.02" g="0.6" b="0.96" a="1" />
+</ILLUMINATION>
+
+
+<!-- Lights -->
+<LIGHTS>
+	<LIGHT id="ambient">
+        <enable value ="1" />
+        <position  x="0" y="100" z="0" w="1" />
+        <ambient r="0.5" g="0.5" b="0.5" a="1.0" />
+        <diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+        <specular r="1.0" g="1.0" b="1.0" a="1.0" />
+    </LIGHT>
+
+    <LIGHT id="light0">
+        <enable value ="1" />
+        <position  x="10" y="20" z="10" w="1" />
+        <ambient r="0" g="0" b="0" a="1.0" />
+        <diffuse r="0.5" g="0.5" b="0.5" a="0.5" />
+        <specular r="0.5" g="0.5" b="0.5" a="0.5" />
+    </LIGHT>
+</LIGHTS>
+
+<!-- Textures -->
+<TEXTURES>
+    <TEXTURE id="tiger_solid_color">
+        <file path="images/tiger_solid_color.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tank_track_top">
+        <file path="images/tank_track.png" />
+        <amplif_factor s="1" t="0.1" />
+    </TEXTURE>
+
+    <TEXTURE id="tank_track_front">
+        <file path="images/tank_track.png" />
+        <amplif_factor s="1" t="0.8" />
+    </TEXTURE>
+
+    <TEXTURE id="tank_wheel">
+        <file path="images/wheel.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+	<TEXTURE id="field">
+        <file path="images/field3.jpg" />
+        <amplif_factor s="0.3" t="0.3" />
+    </TEXTURE>
+
+    <TEXTURE id="mountain">
+        <file path="images/mountain.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+	<TEXTURE id="tiger_exhaust">
+        <file path="images/tiger_exhaust.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_123_left_turret">
+        <file path="images/tiger_123_left_turret.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_123_right_turret">
+        <file path="images/tiger_123_right_turret.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_123_rear_turret">
+        <file path="images/tiger_123_rear_turret.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_turret_box_top">
+        <file path="images/tiger_turret_box_top.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_front_turret">
+        <file path="images/tiger_front_turret.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_hull_front_top">
+        <file path="images/tiger_hull_front_top.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_hull_front_second_top">
+        <file path="images/tiger_hull_front_second_top.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_hull_front_second_bottom">
+        <file path="images/tiger_hull_front_second_bottom.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_hull_top">
+        <file path="images/tiger_hull_top.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_hull_rear_plate">
+        <file path="images/tiger_hull_rear_plate.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_cupola">
+        <file path="images/tiger_cupola.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="tiger_barrel_big_section">
+        <file path="images/tiger_barrel_big_section.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+</TEXTURES>
+
+
+<MATERIALS>
+    <!-- A default material -->
+    <MATERIAL id="defaultMaterial">
+        <shininess value="1" />
+        <specular r="0.0" g="0.0" b="0.0" a="1" />
+        <diffuse r="0.4" g="0.4" b="0.4" a="1" />
+        <ambient r="0.4" g="0.4" b="0.4" a="1" />
+        <emission r="0.0" g="0.0" b="0.0" a="1" />
+    </MATERIAL>
+
+    <MATERIAL id="fieldMaterial">
+        <shininess value="1" />
+        <specular r="0.1" g="0.1" b="0.1" a="1" />
+        <diffuse r="0.5" g="0.5" b="0.5" a="1" />
+        <ambient r="0.5" g="0.5" b="0.5" a="1" />
+        <emission r="0.0" g="0.0" b="0.0" a="1" />
+    </MATERIAL>
+
+    <MATERIAL id="mountainMaterial">
+        <shininess value="1" />
+        <specular r="0.3" g="0.3" b="0.3" a="1" />
+        <diffuse r="0.5" g="0.5" b="0.5" a="1" />
+        <ambient r="0.5" g="0.5" b="0.5" a="1" />
+        <emission r="0.0" g="0.0" b="0.0" a="1" />
+    </MATERIAL>
+
+    <MATERIAL id="tigerMaterial">
+        <shininess value="1" />
+        <specular r="0.3" g="0.3" b="0.3" a="1" />
+        <diffuse r="0.5" g="0.5" b="0.5" a="1" />
+        <ambient r="0.1" g="0.1" b="0.1" a="1" />
+        <emission r="0.0" g="0.0" b="0.0" a="1" />
+    </MATERIAL>
+</MATERIALS>
+
+<!-- The animations -->
+<ANIMATIONS>
+    <ANIMATION id="transTest" speed="8" type="linear">
+        <controlpoint xx="-4" yy="0" zz="0" />
+        <controlpoint xx="0" yy="0" zz="0" />
+    </ANIMATION>
+
+    <ANIMATION id="circTest" speed="5" type="circular"
+               centerX = "0" centerY = "0" centerZ = "0"
+               radius = "5" startAng = "0" rotAng = "90"/>
+
+    <ANIMATION id="transTest2" speed="1" type="linear">
+        <controlpoint xx="4" yy="0" zz="0" />
+        <controlpoint xx="4" yy="0" zz="4" />
+    </ANIMATION>
+
+    <ANIMATION id="bezierTest" speed="8" type="bezier">
+        <controlpoint xx="0" yy="0" zz="0" />
+        <controlpoint xx="8" yy="0" zz="0" />
+        <controlpoint xx="8" yy="0" zz="4" />
+        <controlpoint xx="0" yy="0" zz="4" />
+    </ANIMATION>
+
+	<ANIMATION id="comboTest" type="combo">
+		<SPANREF id="transTest" />
+		<SPANREF id="bezierTest" />
+    <SPANREF id="transTest" />
+
+	</ANIMATION>
+
+    <ANIMATION id="convoyBezier1" speed="10" type="bezier">
+        <controlpoint xx="-10" yy="0" zz="-10" />
+        <controlpoint xx="-5" yy="0" zz="-10" />
+        <controlpoint xx="0" yy="0" zz="-5" />
+        <controlpoint xx="0" yy="0" zz="0" />
+    </ANIMATION>
+
+    <ANIMATION id="convoyLinear" speed="15" type="linear">
+        <controlpoint xx="0" yy="0" zz="0" />
+        <controlpoint xx="0" yy="0" zz="20" />
+    </ANIMATION>
+
+    <ANIMATION id="convoyBlowUp" speed="15" type="bezier">
+        <controlpoint xx="0" yy="0" zz="20" />
+        <controlpoint xx="0" yy="10" zz="20" />
+        <controlpoint xx="0" yy="10" zz="30" />
+        <controlpoint xx="0" yy="0" zz="30" />
+    </ANIMATION>
+
+    <ANIMATION id="ambushLinear1" speed="15" type="linear">
+        <controlpoint xx="50" yy="0" zz="0" />
+        <controlpoint xx="50" yy="0" zz="10" />
+    </ANIMATION>
+
+    <ANIMATION id="ambushCirc" speed="15" type="circular"
+                centerX="35" centerY="0" centerZ="10"
+                radius="15" startAng="0" rotAng="-90"/>
+
+    <ANIMATION id="ambushLinear2" speed="15" type="linear">
+        <controlpoint xx="35" yy="0" zz="25" />
+        <controlpoint xx="25" yy="0" zz="25" />
+    </ANIMATION>
+
+    <ANIMATION id="convoyAnim" type="combo">
+        <SPANREF id="convoyBezier1" />
+        <SPANREF id="convoyLinear" />
+        <SPANREF id="convoyBlowUp" />
+    </ANIMATION>
+
+    <ANIMATION id="ambushAnim" type="combo">
+        <SPANREF id="ambushLinear1" />
+        <SPANREF id="ambushCirc" />
+        <SPANREF id="ambushLinear2" />
+    </ANIMATION>
+
+</ANIMATIONS>
+
+<!-- The leaves -->
+<LEAVES>
+</LEAVES>
+
+
+<!-- The nodes -->
+<NODES>
+
+    <ROOT id="root" />
+
+    <!-- The root node -->
+    <NODE id="root">
+        <MATERIAL id="defaultMaterial" />
+        <TEXTURE id="null" />
+
+        <DESCENDANTS>
+            <NODEREF id="tigers" />
+            <NODEREF id="ground" />
+            <NODEREF id="mountain" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="ground" selectable="1">
+        <MATERIAL id="fieldMaterial" />
+        <TEXTURE id="field" />
+
+        <SCALE sx="200" sy="1" sz="200" />
+        <TRANSLATION x="-0.5" y="0" z="0.5" />
+        <ROTATION axis="x" angle="-90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="mountain" selectable="1">
+        <MATERIAL id="mountainMaterial" />
+        <TEXTURE id="mountain" />
+
+        <TRANSLATION x="10" y="-2" z="0" />
+        <SCALE sx="2" sy="1" sz="2" />
+
+        <DESCENDANTS>
+            <LEAF type="patch" args="20 20">
+                <CPLINE>
+					<CPOINT xx="0" yy="0" zz="0" ww="1" />
+					<CPOINT xx="5" yy="0" zz="0" ww="1" />
+					<CPOINT xx="10" yy="0" zz="0" ww="1" />
+				</CPLINE>
+				<CPLINE>
+					<CPOINT xx="0" yy="0" zz="5" ww="1" />
+					<CPOINT xx="5" yy="12" zz="5" ww="5" />
+					<CPOINT xx="10" yy="0" zz="5" ww="1" />
+				</CPLINE>
+                <CPLINE>
+					<CPOINT xx="0" yy="0" zz="10" ww="1" />
+					<CPOINT xx="5" yy="0" zz="10" ww="1" />
+					<CPOINT xx="10" yy="0" zz="10" ww="1" />
+				</CPLINE>
+			</LEAF>
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tigers">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <DESCENDANTS>
+            <NODEREF id="convoy_Tiger" />
+            <NODEREF id="ambush_Tiger" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="convoy_Tiger" selectable="1">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <ANIMATIONREFS>
+            <ANIMATIONREF id="convoyAnim" />
+        </ANIMATIONREFS>
+
+        <DESCENDANTS>
+            <NODEREF id="PzKpfw_Tiger" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="ambush_Tiger" selectable="1">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <ANIMATIONREFS>
+            <ANIMATIONREF id="ambushAnim" />
+        </ANIMATIONREFS>
+
+
+        <DESCENDANTS>
+            <NODEREF id="PzKpfw_Tiger" />
+        </DESCENDANTS>
+    </NODE>
+
+	<NODE id="PzKpfw_Tiger" selectable="1">
+		<MATERIAL id="tigerMaterial" />
+		<TEXTURE id="tiger_solid_color" />
+
+        <ROTATION axis="y" angle="90" />
+
+		<DESCENDANTS>
+			<NODEREF id="tiger_turret" />
+			<NODEREF id="tiger_hull" />
+            <NODEREF id="tiger_tracks" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_turret">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0.02" z="0" />
+        <TRANSLATION x="0.07" y="1.780" z="1" />
+
+		<DESCENDANTS>
+            <NODEREF id="tiger_turret_box" />
+            <NODEREF id="tiger_cupola" />
+            <NODEREF id="tiger_barrel" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_turret_box">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <SCALE sx="3" sy="1" sz="3" />
+
+        <DESCENDANTS>
+            <NODEREF id="tiger_turret_box_front" />
+            <NODEREF id="tiger_turret_box_right" />
+            <NODEREF id="tiger_turret_box_back" />
+            <NODEREF id="tiger_turret_box_left" />
+            <NODEREF id="tiger_turret_box_top" />
+            <NODEREF id="tiger_turret_box_bottom" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_turret_box_front">
+        <MATERIAL id="null" />
+        <TEXTURE id="tiger_front_turret" />
+
+        <TRANSLATION x="0" y="0" z="1" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_turret_box_right">
+        <MATERIAL id="null" />
+        <TEXTURE id="tiger_123_right_turret" />
+
+        <ROTATION axis="y" angle="-90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_turret_box_back">
+        <MATERIAL id="null" />
+        <TEXTURE id="tiger_123_rear_turret" />
+
+        <TRANSLATION x="1" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_turret_box_left">
+        <MATERIAL id="null" />
+        <TEXTURE id="tiger_123_left_turret" />
+
+        <TRANSLATION x="1" y="0" z="1" />
+        <ROTATION axis="y" angle="90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_turret_box_top">
+        <MATERIAL id="null" />
+        <TEXTURE id="tiger_turret_box_top" />
+
+        <TRANSLATION x="0" y="1" z="1" />
+        <ROTATION axis="x" angle="-90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_turret_box_bottom">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <ROTATION axis="x" angle="90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_cupola">
+        <MATERIAL id="null" />
+        <TEXTURE id="tiger_cupola" />
+
+        <TRANSLATION x="0.540" y="0" z="0" />
+        <TRANSLATION x="1.6" y="1.265" z="1.2" />
+        <SCALE sx="1.05" sy="0.265" sz="1.05" />
+        <ROTATION axis="x" angle="90" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1 0.5 0.5 1 12 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="cube">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <DESCENDANTS>
+            <NODEREF id="faceCube1" />
+            <NODEREF id="faceCube2" />
+            <NODEREF id="faceCube3" />
+            <NODEREF id="faceCube4" />
+            <NODEREF id="faceCube5" />
+            <NODEREF id="faceCube6" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="faceCube1">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0" z="1" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="faceCube2">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <ROTATION axis="y" angle="-90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="faceCube3">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="1" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="faceCube4">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="1" y="0" z="1" />
+        <ROTATION axis="y" angle="90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="faceCube5">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="1" z="1" />
+        <ROTATION axis="x" angle="-90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="faceCube6">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <ROTATION axis="x" angle="90" />
+
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_barrel">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="1.5" y="0.5" z="3" />
+
+		<DESCENDANTS>
+            <NODEREF id="tiger_barrel_big_section" />
+            <NODEREF id="tiger_barrel_medium_section" />
+            <NODEREF id="tiger_barrel_small_section" />
+            <NODEREF id="tiger_barrel_end_section" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_barrel_big_section">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_barrel_big_section" />
+
+		<DESCENDANTS>
+            <LEAF type="cylinder" args="1 0.2 0.2 1 10 1 0" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_barrel_medium_section">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_barrel_big_section" />
+
+        <TRANSLATION x="0" y="0" z="1" />
+
+		<DESCENDANTS>
+            <LEAF type="cylinder" args="1 0.15 0.15 1 10 1 0" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_barrel_small_section">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_barrel_big_section" />
+
+        <TRANSLATION x="0" y="0" z="2" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="2 0.1 0.1 1 10 0 0" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_barrel_end_section">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_barrel_big_section" />
+
+        <TRANSLATION x="0" y="0" z="4" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.2 0.1 0.2 1 10 1 0" />
+            <NODEREF id="tiger_barrel_tip" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_barrel_tip">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0" z="0.2" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.15 0.15 0.15 1 10 1 0" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_hull">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0.02" z="0" />
+
+		<DESCENDANTS>
+			<NODEREF id="tiger_hull_top" />
+			<NODEREF id="tiger_front_plate" />
+			<NODEREF id="tiger_left_plate" />
+			<NODEREF id="tiger_right_plate" />
+			<NODEREF id="tiger_hull_rear_plate" />
+            <NODEREF id="tiger_hull_bottom_plate" />
+            <NODEREF id="tiger_exhaust" />
+            <NODEREF id="tiger_exhaust2" />
+        </DESCENDANTS>
+	</NODE>
+
+    <NODE id="tiger_hull_top">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_hull_top" />
+
+        <SCALE sx="3.140" sy="1" sz="5" />  <!-- sz is approximated -->
+        <TRANSLATION x="0" y="1.780" z="1" />
+        <ROTATION axis="x" angle="-90" />
+
+		<DESCENDANTS>
+			<LEAF  type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_front_plate">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0" z="5.0696" />
+
+        <DESCENDANTS>
+            <NODEREF id="tiger_hull_front_top" />
+            <NODEREF id="tiger_hull_front_second_top" />
+            <NODEREF id="tiger_hull_front_second_bottom" />
+            <NODEREF id="tiger_hull_front_bottom" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_front_top">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="1.3295" z="0" />
+
+        <DESCENDANTS>
+            <NODEREF id="tiger_hull_front_top_plate" />
+            <NODEREF id="tiger_front_mg" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_front_top_plate">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_hull_front_top" />
+
+        <ROTATION axis="x" angle="-9" />
+        <SCALE sx="3.140" sy="0.4505" sz="1" />
+
+        <DESCENDANTS>
+			<LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_front_mg">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="1" y="0.15" z="-0.15" />
+
+        <DESCENDANTS>
+			<LEAF type="sphere" args="0.25 20 20" />
+            <LEAF type="cylinder" args="0.5 0.02 0.02 1 10 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_front_second_top">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_hull_front_second_top" />
+
+        <TRANSLATION x="0" y="1.1125" z="1.2619" />
+        <ROTATION axis="x" angle="-80" />
+        <SCALE sx="3.140" sy="1.2813" sz="1" />
+
+        <DESCENDANTS>
+			<LEAF  type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_front_second_bottom">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_hull_front_second_bottom" />
+
+        <TRANSLATION x="0" y="0.100" z="0.7897" />
+        <ROTATION axis="x" angle="25" />
+        <SCALE sx="3.140" sy="1.1172" sz="1" />
+
+        <DESCENDANTS>
+			<LEAF  type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_front_bottom">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0" z="0.5935" />
+        <ROTATION axis="x" angle="63" />
+        <SCALE sx="3.140" sy="0.2203" sz="1" />
+
+        <DESCENDANTS>
+			<LEAF  type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+     <NODE id="tiger_exhaust">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_exhaust" />
+
+        <TRANSLATION x="2" y="1.8" z="-0.2" />
+        <ROTATION axis="x" angle="80" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1.4 0.25 0.25 1 10 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_exhaust2">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_exhaust" />
+
+        <TRANSLATION x="1.2" y="1.8" z="-0.2" />
+        <ROTATION axis="x" angle="80" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1.4 0.25 0.25 1 10 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_left_plate">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="3.140" y="0" z="0" />
+        <ROTATION axis="y" angle="90" />
+
+		<DESCENDANTS>
+			<NODEREF id="tiger_left_plate_front" />
+            <NODEREF id="tiger_left_plate_midback" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_right_plate">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <ROTATION axis="y" angle="90" />
+
+		<DESCENDANTS>
+			<NODEREF id="tiger_right_plate_front" />
+            <NODEREF id="tiger_right_plate_midback" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_left_plate_front">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-5" y="0" z="0" />
+
+		<DESCENDANTS>
+            <LEAF type="triangle" args="0 1.780 0  -0.0696 1.335 0  0 1.335 0" />
+            <LEAF type="triangle" args="-1.2619 1.1125 0  -0.0696 1.1125 0  -0.0696 1.335 0" />
+            <LEAF type="rectangle" args="-0.0696 1.335 0 1.1125" />
+            <LEAF type="triangle" args="-1.2619 1.1125 0  -0.7898 0.100 0 -0.7898 1.1125 0" />
+            <LEAF type="rectangle" args="-0.7898 1.1125 0 0.100" />
+            <LEAF type="triangle" args="-0.7898 0.100 0  -0.5935 0 0  -0.5935 0.100 0" />
+            <LEAF type="rectangle" args="-0.5935 0.100 0 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_left_plate_midback">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-0.278" y="0" z="0" />
+
+		<DESCENDANTS>
+            <LEAF type="rectangle" args="-4.722 1.780 0 0" />
+			<LEAF type="triangle" args="0 0 0  0.278 1.780 0  0 1.780 0" />
+        </DESCENDANTS>
+    </NODE>
+
+     <NODE id="tiger_right_plate_front">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-5" y="0" z="0" />
+
+		<DESCENDANTS>
+            <NODEREF id="tiger_right_plate_front_inverted_quad1" />
+            <NODEREF id="tiger_right_plate_front_inverted_quad2" />
+            <NODEREF id="tiger_right_plate_front_inverted_quad3" />
+            <LEAF type="triangle" args="-0.0696 1.335 0  0 1.780 0   0 1.335 0" />
+            <LEAF type="triangle" args="-0.0696 1.1125 0  -1.2619 1.1125 0  -0.0696 1.335 0" />
+            <LEAF type="triangle" args="-0.7898 0.100 0 -1.2619 1.1125 0  -0.7898 1.1125 0" />
+            <LEAF type="triangle" args="-0.5935 0 0  -0.7898 0.100 0  -0.5935 0.100 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_right_plate_midback">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-0.278" y="0" z="0" />
+
+		<DESCENDANTS>
+            <NODEREF id="tiger_right_plate_midback_inverted_quad" />
+			<LEAF type="triangle" args="0.278 1.780 0  0 0 0  0 1.780 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_right_plate_front_inverted_quad1">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-0.0696" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+		<DESCENDANTS>
+            <LEAF type="rectangle" args="-0.0696 1.335 0 1.1125" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_right_plate_front_inverted_quad2">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-0.7898" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+		<DESCENDANTS>
+            <LEAF type="rectangle" args="-0.7898 1.1125 0 0.100" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_right_plate_front_inverted_quad3">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-0.5935" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+		<DESCENDANTS>
+            <LEAF type="rectangle" args="-0.5935 0.100 0 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_right_plate_midback_inverted_quad">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="-4.722" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+		<DESCENDANTS>
+            <LEAF type="rectangle" args="-4.722 1.780 0 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_rear_plate">
+        <MATERIAL id="null" />
+		<TEXTURE id="tiger_hull_rear_plate" />
+
+        <TRANSLATION x="0" y="0" z="0.278" /> <!-- approximated -->
+        <ROTATION axis="x" angle="-9" />
+        <SCALE sx="3.140" sy="1.802" sz="1" />
+        <TRANSLATION x="1" y="0" z="0" />
+        <ROTATION axis="y" angle="180" />
+
+		<DESCENDANTS>
+			<LEAF  type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_hull_bottom_plate">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0" z="0.278" />
+        <SCALE sx="3.140" sy="1" sz="5.3696" />
+        <ROTATION axis="x" angle="90" />
+
+		<DESCENDANTS>
+			<LEAF  type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_tracks">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <DESCENDANTS>
+			<NODEREF id="tiger_track_left" />
+            <NODEREF id="tiger_track_right" />
+        </DESCENDANTS>
+    </NODE>
+
+	<NODE id="tiger_track_left">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+		<TRANSLATION x="2.640" y="0" z="0" />
+        <TRANSLATION x="1" y="0" z="6.5" />
+        <ROTATION axis="Y" angle="180" />
+
+        <DESCENDANTS>
+			<NODEREF id="tiger_track" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_track_right">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+		<TRANSLATION x="-0.5" y="0" z="0" />
+
+        <DESCENDANTS>
+			<NODEREF id="tiger_track" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_track">
+        <MATERIAL id="null" />
+		<TEXTURE id="null" />
+
+        <DESCENDANTS>
+			<NODEREF id="tiger_track_top" />
+			<NODEREF id="tiger_track_bottom" />
+			<NODEREF id="tiger_track_front" />
+			<NODEREF id="tiger_track_back" />
+            <NODEREF id="tiger_track_wheels" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="tiger_track_wheels">
+        <MATERIAL id="null" />
+        <TEXTURE id="tank_wheel" />
+
+        <DESCENDANTS>
+            <NODEREF id = "wheel1"/>
+            <NODEREF id = "wheel2"/>
+            <NODEREF id = "wheel3"/>
+            <NODEREF id = "wheel4"/>
+            <NODEREF id = "wheel5"/>
+            <NODEREF id = "wheel6"/>
+            <NODEREF id = "wheel7"/>
+            <NODEREF id = "wheel8"/>
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel1">
+        <MATERIAL id="null" />
+        <TEXTURE id="null"/>
+
+        <TRANSLATION x="0" y="0.55" z="0.55" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel2">
+        <MATERIAL id="null" />
+        <TEXTURE id="null"/>
+
+        <TRANSLATION x="0.2" y="0.55" z="1.30" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel3">
+        <MATERIAL id="null" />
+        <TEXTURE id="null"/>
+
+        <TRANSLATION x="0" y="0.55" z="2.05" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel4">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0.2" y="0.55" z="2.80" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel5">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0.55" z="3.55" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel6">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0.2" y="0.55" z="4.30" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel7">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0" y="0.55" z="5.05" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="wheel8">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0.2" y="0.55" z="5.80" />
+        <ROTATION axis="Y" angle="90" />
+        <SCALE sx="0.9" sy="0.9" sz="1" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.1 0.5 0.5 1 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+
+
+    <NODE id="tiger_track_top">
+        <MATERIAL id="null" />
+		<TEXTURE id="tank_track_top" />
+
+        <TRANSLATION x="0" y="1" z="0" />
+        <SCALE sx="1" sy="0.1" sz="6.5" />
+
+        <DESCENDANTS>
+			<NODEREF id="cube" />
+        </DESCENDANTS>
+    </NODE>
+
+	<NODE id="tiger_track_bottom">
+        <MATERIAL id="null" />
+		<TEXTURE id="tank_track_top" />
+
+        <SCALE sx="1" sy="0.1" sz="6.5" />
+
+        <DESCENDANTS>
+			<NODEREF id="cube" />
+        </DESCENDANTS>
+    </NODE>
+
+	<NODE id="tiger_track_front">
+        <MATERIAL id="null" />
+		<TEXTURE id="tank_track_front" />
+
+		<TRANSLATION x="0" y="0" z="6.4" />
+        <SCALE sx="1" sy="1" sz="0.1" />
+
+        <DESCENDANTS>
+			<NODEREF id="cube" />
+        </DESCENDANTS>
+    </NODE>
+
+	<NODE id="tiger_track_back">
+        <MATERIAL id="null" />
+		<TEXTURE id="tank_track_front" />
+
+        <SCALE sx="1" sy="1" sz="0.1" />
+
+        <DESCENDANTS>
+			<NODEREF id="cube" />
+        </DESCENDANTS>
+    </NODE>
+
+</NODES>
+
+</SCENE>
